@@ -1,0 +1,624 @@
+<!DOCTYPE html><html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff3f8">
+<title>Happy Anniversary 6 Month ♡</title><link href="https://fonts.googleapis.com/css2?family=Itim&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root {
+  --pink: #f3a8c4;
+  --pink2: #ffe2ed;
+  --darkpink: #c86c92;
+  --cream: #fff9fb;
+  --text: #795361;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Quicksand', 'Itim', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topbar {
+  text-align: center;
+  padding: 14px 10px;
+  background: #f9d8e5;
+  color: #a85c7d;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.hero {
+  min-height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 55px 20px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 40%, #fff 0%, #fff4f8 48%, #f9d8e5 100%);
+}
+
+.tag {
+  padding: 9px 18px;
+  border: 1px solid #edb0c9;
+  border-radius: 30px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #bd7794;
+  background: #ffffffa8;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 9vw, 75px);
+  line-height: 1.2;
+  margin-top: 27px;
+  color: #d981a5;
+  font-weight: 700;
+  animation: appear 1s ease both;
+}
+
+.hero h1 span {
+  display: block;
+  font-family: 'Itim', cursive;
+  color: #b95e85;
+}
+
+.hero p {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 2;
+  color: #9b7282;
+}
+
+.hero-heart {
+  font-size: 27px;
+  margin-top: 22px;
+  color: #e18bad;
+  animation: heartbeat 1.8s infinite;
+}
+
+.melody {
+  width: 125px;
+  height: 135px;
+  object-fit: contain;
+  margin-top: 17px;
+  filter: drop-shadow(0 7px 9px #df8eaf40);
+  animation: bob 3s ease-in-out infinite;
+}
+
+.scroll {
+  margin-top: 35px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #bd8a9f;
+  animation: softBlink 2s ease-in-out infinite;
+}
+
+section {
+  padding: 75px 20px;
+  text-align: center;
+}
+
+.section-label {
+  font-size: 10px;
+  color: #cc83a1;
+  letter-spacing: 3px;
+  margin-bottom: 13px;
+}
+
+h2 {
+  font-family: 'Itim', cursive;
+  font-size: clamp(30px, 7vw, 45px);
+  font-weight: 400;
+  color: #c96f94;
+  margin-bottom: 18px;
+}
+
+.intro {
+  max-width: 520px;
+  margin: auto;
+  font-size: 13px;
+  line-height: 2.2;
+  color: #96717f;
+}
+
+.story-heart {
+  margin: 28px auto 0;
+  font-size: 22px;
+  color: #e7a0bb;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+.letter-section {
+  background: #fff0f6;
+}
+
+.envelope {
+  max-width: 470px;
+  margin: 35px auto 0;
+  padding: 30px 22px;
+  background: white;
+  border: 1px solid #f1c4d5;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px #c86c9214;
+}
+
+.envelope-top {
+  font-size: 38px;
+  color: #d98aa8;
+  margin-bottom: 12px;
+  animation: heartbeat 2s infinite;
+}
+
+.envelope > p {
+  font-size: 12px;
+  line-height: 2;
+  color: #a37c8b;
+}
+
+.open-btn {
+  background: #e9a1bd;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 24px;
+  margin-top: 22px;
+  font-size: 12px;
+  transition: .3s;
+  box-shadow: 0 4px 0 #d58baa;
+}
+
+.open-btn:hover {
+  background: #d985a8;
+  transform: translateY(-2px);
+}
+
+#letter {
+  display: none;
+  margin-top: 27px;
+  padding: 23px 17px;
+  border-radius: 12px;
+  background: #fff3f8;
+  text-align: left;
+  font-size: 13px;
+  line-height: 2.2;
+  color: #8e6576;
+  animation: appear .6s ease both;
+}
+
+#letter p {
+  margin-bottom: 15px;
+}
+
+.signature {
+  text-align: right;
+  color: #c76f94;
+  font-family: 'Itim', cursive;
+  font-size: 22px;
+}
+
+.music-section {
+  background: linear-gradient(180deg, #fff8fb, #f9e1eb);
+}
+
+.music-card {
+  max-width: 380px;
+  margin: 30px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  background: #fff9fb;
+  border: 1px solid #f8d8e5;
+  border-radius: 18px;
+  box-shadow: 0 7px 22px #b96c8c12;
+  text-align: left;
+}
+
+.disc {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle, #f4b4cd 0 4px, #e28fb0 5px 8px);
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 20px;
+}
+
+.disc.playing {
+  animation: spin 4s linear infinite;
+}
+
+.music-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.music-info strong {
+  font-size: 12px;
+  color: #a85e7d;
+}
+
+.music-info p {
+  font-size: 10px;
+  color: #b38a9b;
+  margin-top: 5px;
+}
+
+.music-btn {
+  border: none;
+  border-radius: 50%;
+  background: #e8a0bb;
+  color: white;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  font-size: 15px;
+  box-shadow: 0 3px 0 #d58baa;
+}
+
+.music-btn:active {
+  transform: scale(.94);
+}
+
+.youtube-wrap {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  left: -10px;
+  bottom: 0;
+}
+
+.music-note {
+  margin-top: 18px;
+  font-size: 11px;
+  color: #b38a9b;
+  line-height: 1.9;
+}
+
+.footer {
+  padding: 55px 20px;
+  text-align: center;
+  background: #fff5f9;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 11px;
+  color: #b18a9a;
+  line-height: 2;
+}
+
+.float {
+  position: fixed;
+  z-index: 20;
+  pointer-events: none;
+  bottom: -30px;
+  color: #e89bb8;
+  animation: floatUp 5s linear forwards;
+}
+
+.sparkle {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  color: #e6a0bc;
+  opacity: 0;
+  animation: sparkle 3.5s ease-in-out infinite;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.13); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(0) rotate(0); }
+  15% { opacity: .7; }
+  100% { opacity: 0; transform: translateY(-105vh) rotate(30deg); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(.6) rotate(0); }
+  50% { opacity: .65; transform: scale(1) rotate(25deg); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes softBlink {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 550px) {
+  section {
+    padding: 65px 19px;
+  }
+
+  .melody {
+    width: 115px;
+    height: 125px;
+  }
+
+  .music-card {
+    gap: 12px;
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style></head><body><div class="topbar">
+  MADE WITH LOVE · 6 MONTHS TOGETHER ♡
+</div><header class="hero">
+  <div class="tag">a little surprise for you ♡</div>  <h1>
+    happy anniversary
+    <span>6 month ♡</span>
+  </h1>  <p>
+    six months of us, little moments & lots of love<br>
+    เว็บเล็ก ๆ ที่ตั้งใจทำให้เธอโดยเฉพาะ
+  </p><img
+class="melody"
+src="https://upload.wikimedia.org/wikipedia/en/0/05/My_Melody.png"
+alt="My Melody"
+onerror="this.style.display='none'"
+
+«»
+
+  <div class="hero-heart">♡</div>
+  <div class="scroll">SCROLL A LITTLE ↓</div>
+</header><section>
+  <div class="section-label">01 — OUR LITTLE STORY</div>
+  <h2>time flies, doesn't it?</h2>  <p class="intro">
+    6 เดือนแล้วนะที่เราได้มีกันและกัน<br>
+    ขอบคุณที่เข้ามาเป็นความสุขในวันธรรมดา ๆ ของเค้า<br>
+    ขอบคุณทุกเสียงหัวเราะ ทุกความใส่ใจ<br>
+    และทุกช่วงเวลาที่ทำให้เค้ายิ้มได้เสมอ<br><br>
+    บางวันเราอาจงอแงหรือไม่เข้าใจกันบ้าง<br>
+    แต่เค้าก็ยังอยากเรียนรู้และเติบโตไปพร้อมกับเธอ<br>
+    เพราะทุกช่วงเวลาที่มีเธอ มันมีความหมายจริง ๆ
+  </p>  <div class="story-heart">୨୧ ♡ ୨୧</div>
+</section><section class="letter-section">
+  <div class="section-label">02 — A LETTER FOR YOU</div>
+  <h2>open when you miss me</h2>  <div class="envelope">
+    <div class="envelope-top">💌</div><p>
+  มีบางอย่างที่เค้าอยากบอกเธอ<br>
+  ลองกดเปิดอ่านดูนะ ♡
+</p>
+
+<button class="open-btn" id="openBtn" onclick="toggleLetter()">
+  open my letter ♡
+</button>
+
+<div id="letter">
+  <p>ถึงคนพิเศษของเค้า ♡</p>
+
+  <p>
+    happy anniversary 6 month นะคะ
+    ขอบคุณที่เข้ามาเป็นส่วนหนึ่งในชีวิตของเค้า
+    ขอบคุณที่ทำให้หลาย ๆ วันมีความหมายมากขึ้น
+    แค่ได้คุยกับเธอ ได้หัวเราะด้วยกัน
+    หรือได้เล่าเรื่องเล็ก ๆ ในแต่ละวันให้ฟัง
+    เค้าก็มีความสุขแล้ว
+  </p>
+
+  <p>
+    ตลอดเวลาที่ผ่านมา เราอาจมีทั้งวันที่ดีและวันที่เหนื่อย
+    บางครั้งอาจไม่เข้าใจกันบ้าง งอแงใส่กันบ้าง
+    แต่เค้าก็อยากให้เราค่อย ๆ ปรับเข้าหากัน
+    รับฟังกัน และดูแลความรู้สึกของกันและกันให้ดี
+  </p>
+
+  <p>
+    ขอบคุณที่เป็นรอยยิ้ม เป็นความสบายใจ
+    และเป็นคนที่เค้าอยากแบ่งปันเรื่องราวต่าง ๆ ด้วย
+    เค้าไม่รู้ว่าอนาคตจะเป็นยังไงทั้งหมด
+    แต่เค้าอยากให้มีเธออยู่ในเดือนต่อ ๆ ไป
+    อยากสร้างความทรงจำใหม่ ๆ กับเธออีกเยอะเลย
+  </p>
+
+  <p>
+    ขอให้เราได้ฉลองวันครบรอบด้วยกันไปเรื่อย ๆ
+    ค่อย ๆ เติบโตไปด้วยกัน และอย่าลืมใส่ใจกันเสมอนะ
+    ขอบคุณสำหรับ 6 เดือนที่ผ่านมาจริง ๆ
+  </p>
+
+  <div class="signature">love you always ♡</div>
+</div>
+
+  </div>
+</section><section class="music-section">
+  <div class="section-label">03 — OUR LITTLE SOUNDTRACK</div>
+  <h2>a song for you ♡</h2>  <p class="intro">
+    Flower for U — pondering 🌷<br>
+    เพลงพิเศษสำหรับคนพิเศษของเค้า
+  </p>  <div class="music-card">
+    <div class="disc" id="disc">♫</div><div class="music-info">
+  <strong>Flower for U ♡</strong>
+  <p>pondering · a song for you</p>
+</div>
+
+<button
+  class="music-btn"
+  id="musicBtn"
+  onclick="toggleMusic()"
+  aria-label="เล่นหรือหยุดเพลง"
+>▶</button>
+
+  </div>  <div class="youtube-wrap" aria-hidden="true">
+    <div id="youtubePlayer"></div>
+  </div>  <p class="music-note">
+    กดปุ่ม ▶ เพื่อเปิดเพลงนะ ♡<br>
+    หากเพลงไม่เล่น ลองเปิดผ่าน YouTube โดยตรง
+  </p>
+</section><footer class="footer">
+  <h2>to more months with you ♡</h2>
+  <p>
+    ขอบคุณที่เป็นเธอ<br>
+    แล้วอยู่สร้างความทรงจำด้วยกันไปนาน ๆ นะ
+  </p>
+  <br>
+  <p>made with love · happy 6 month ♡</p>
+</footer><script>
+function toggleLetter() {
+  const letter = document.getElementById('letter');
+  const button = document.getElementById('openBtn');
+
+  const isOpen = letter.style.display === 'block';
+
+  letter.style.display = isOpen ? 'none' : 'block';
+  button.textContent = isOpen ? 'open my letter ♡' : 'close letter ♡';
+
+  if (!isOpen) createHearts();
+}
+
+/* หัวใจลอยขึ้นมาเล็กน้อยเมื่อเปิดจดหมาย */
+function createHearts() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  for (let i = 0; i < 8; i++) {
+    const item = document.createElement('span');
+
+    item.className = 'float';
+    item.textContent = Math.random() > 0.5 ? '♡' : '✧';
+    item.style.left = (15 + Math.random() * 70) + 'vw';
+    item.style.fontSize = (12 + Math.random() * 9) + 'px';
+    item.style.animationDelay = (Math.random() * 0.8) + 's';
+
+    document.body.appendChild(item);
+    setTimeout(() => item.remove(), 5500);
+  }
+}
+
+/* ดาวประกายเล็ก ๆ บนหน้าจอ */
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  for (let i = 0; i < 5; i++) {
+    const sparkle = document.createElement('span');
+
+    sparkle.className = 'sparkle';
+    sparkle.textContent = '✧';
+    sparkle.style.left = (8 + Math.random() * 84) + 'vw';
+    sparkle.style.top = (12 + Math.random() * 75) + 'vh';
+    sparkle.style.fontSize = (10 + Math.random() * 9) + 'px';
+    sparkle.style.animationDelay = (Math.random() * 3.5) + 's';
+
+    document.body.appendChild(sparkle);
+  }
+
+  /* หัวใจลอยเป็นครั้งคราว ไม่ให้เยอะเกินไป */
+  setInterval(() => {
+    if (document.hidden) return;
+
+    const item = document.createElement('span');
+    item.className = 'float';
+    item.textContent = Math.random() > 0.5 ? '♡' : '✧';
+    item.style.left = (10 + Math.random() * 80) + 'vw';
+    item.style.fontSize = (12 + Math.random() * 8) + 'px';
+
+    document.body.appendChild(item);
+    setTimeout(() => item.remove(), 5000);
+  }, 3500);
+}
+
+/* เครื่องเล่น YouTube */
+let youtubePlayer = null;
+let playerReady = false;
+
+const musicBtn = document.getElementById('musicBtn');
+const disc = document.getElementById('disc');
+
+function onYouTubeIframeAPIReady() {
+  youtubePlayer = new YT.Player('youtubePlayer', {
+    height: '1',
+    width: '1',
+    videoId: 'syUBwHazoIc',
+    playerVars: {
+      playsinline: 1,
+      controls: 1,
+      rel: 0
+    },
+    events: {
+      onReady: function() {
+        playerReady = true;
+      },
+      onStateChange: function(event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+          musicBtn.textContent = 'Ⅱ';
+          disc.classList.add('playing');
+        } else {
+          musicBtn.textContent = '▶';
+          disc.classList.remove('playing');
+        }
+      },
+      onError: function() {
+        musicBtn.textContent = '▶';
+        disc.classList.remove('playing');
+        alert('เพลงเล่นไม่ได้ในขณะนี้ ลองเปิดผ่าน YouTube โดยตรงนะ ♡');
+      }
+    }
+  });
+}
+
+function toggleMusic() {
+  if (!playerReady || !youtubePlayer) {
+    alert('เครื่องเล่นเพลงกำลังโหลด รอสักครู่แล้วกดอีกครั้งนะ ♡');
+    return;
+  }
+
+  const state = youtubePlayer.getPlayerState();
+
+  if (state === YT.PlayerState.PLAYING) {
+    youtubePlayer.pauseVideo();
+  } else {
+    youtubePlayer.playVideo();
+  }
+}
+
+const youtubeScript = document.createElement('script');
+youtubeScript.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(youtubeScript);
+</script></body>
+</html>
