@@ -1,0 +1,504 @@
+<!DOCTYPE html><html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIRAYU | PORTFOLIO</title><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* COVER */
+.cover {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1s;
+}
+
+.cover.hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+}
+
+.cover-content h1 {
+    font-size: clamp(40px, 9vw, 75px);
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+.cover-content p {
+    color: #888;
+    letter-spacing: 4px;
+    margin: 15px 0 35px;
+    font-size: 13px;
+}
+
+.enter-btn {
+    padding: 14px 45px;
+    background: white;
+    color: black;
+    border: none;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: .3s;
+    font-family: 'Kanit';
+}
+
+.enter-btn:hover {
+    background: #aaa;
+    transform: scale(1.05);
+}
+
+/* NAV */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #222;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 18px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #242424, #080808 70%);
+    padding: 100px 20px;
+}
+
+.hero small {
+    letter-spacing: 5px;
+    color: #888;
+}
+
+.hero h1 {
+    font-family: 'Montserrat';
+    font-size: clamp(50px, 12vw, 100px);
+    font-weight: 300;
+    letter-spacing: 10px;
+    margin: 25px 0;
+}
+
+.hero p {
+    color: #888;
+    letter-spacing: 3px;
+}
+
+.line {
+    width: 70px;
+    height: 1px;
+    background: white;
+    margin: 25px auto;
+}
+
+/* GENERAL */
+section {
+    padding: 100px 10%;
+}
+
+.title {
+    font-family: 'Montserrat';
+    font-size: 35px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+}
+
+.title span {
+    color: #666;
+}
+
+.dark {
+    background: #111;
+}
+
+/* PROFILE */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.profile-box {
+    padding: 35px;
+    border: 1px solid #333;
+    background: #151515;
+}
+
+.profile-box h2 {
+    font-size: 27px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.profile-box p {
+    color: #999;
+    line-height: 2;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #292929;
+}
+
+.info span:first-child {
+    color: #777;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 30px;
+    background: #121212;
+    border: 1px solid #292929;
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #aaa;
+}
+
+.number {
+    font-family: 'Montserrat';
+    font-size: 35px;
+    color: #555;
+}
+
+.card h3 {
+    margin: 15px 0;
+    letter-spacing: 2px;
+}
+
+.card p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* DREAM */
+.dream {
+    text-align: center;
+    background: linear-gradient(120deg,#171717,#050505);
+}
+
+.dream h2 {
+    font-family: 'Montserrat';
+    font-size: clamp(30px, 7vw, 65px);
+    letter-spacing: 5px;
+}
+
+.dream p {
+    color: #888;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: #888;
+    margin: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #555;
+    border-top: 1px solid #222;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+/* ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: .8s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:700px) {
+    nav {
+        padding: 18px 5%;
+    }
+
+    nav a {
+        font-size: 10px;
+        margin-left: 8px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 80px 7%;
+    }
+
+    .title {
+        font-size: 27px;
+    }
+}
+</style></head><body><!-- WELCOME COVER --><div class="cover" id="cover">
+    <div class="cover-content">
+        <p>WELCOME TO MY PORTFOLIO</p>
+        <h1>ยินดีต้อนรับ</h1>
+        <div class="line"></div>
+        <p>JIRAYU TONSOKRI | 2026</p>
+        <button class="enter-btn" onclick="enterSite()">
+            เข้าสู่เว็บไซต์
+        </button>
+    </div>
+</div><!-- NAVIGATION --><nav>
+    <div class="logo">JIRAYU</div>
+    <div>
+        <a href="#home">HOME</a>
+        <a href="#profile">PROFILE</a>
+        <a href="#interests">INTERESTS</a>
+        <a href="#goals">GOALS</a>
+    </div>
+</nav><!-- HOME --><div class="hero" id="home">
+    <div>
+        <small>PERSONAL PORTFOLIO</small>
+        <h1>JIRAYU.</h1>
+        <div class="line"></div>
+        <p>MY LIFE • MY STORY • MY FUTURE</p>
+    </div>
+</div><!-- PROFILE --><section class="dark" id="profile">
+    <h2 class="title reveal">MY <span>PROFILE.</span></h2><div class="profile-grid reveal">
+    <div class="profile-box">
+        <h2>ABOUT ME</h2>
+        <p>
+            สวัสดีครับ ผมชื่อ จิรายุ ต้อนโสกรี
+            เว็บไซต์นี้จัดทำขึ้นเพื่อแนะนำตัวเอง
+            ถ่ายทอดเรื่องราว ประวัติส่วนตัว
+            ความสามารถ ความชอบ และเป้าหมาย
+            ที่อยากทำให้สำเร็จในอนาคต
+        </p>
+    </div>
+
+    <div>
+        <div class="info">
+            <span>ชื่อ-นามสกุล</span>
+            <span>จิรายุ ต้อนโสกรี</span>
+        </div>
+        <div class="info">
+            <span>ชื่อเล่น</span>
+            <span>พายุ</span>
+        </div>
+        <div class="info">
+            <span>ระดับการศึกษา</span>
+            <span>มัธยมศึกษาตอนปลาย</span>
+        </div>
+        <div class="info">
+            <span>งานอดิเรก</span>
+            <span>เล่นเกม / กีฬา</span>
+        </div>
+        <div class="info">
+            <span>ความสนใจ</span>
+            <span>เทคโนโลยี</span>
+        </div>
+    </div>
+</div>
+
+</section><!-- ABOUT --><section id="about">
+    <h2 class="title reveal">ABOUT <span>ME.</span></h2><div class="cards reveal">
+    <div class="card">
+        <div class="number">01</div>
+        <h3>PERSONALITY</h3>
+        <p>เป็นคนที่ชอบเรียนรู้สิ่งใหม่ๆ
+        และพัฒนาตัวเองอยู่เสมอ</p>
+    </div>
+
+    <div class="card">
+        <div class="number">02</div>
+        <h3>ATTITUDE</h3>
+        <p>เชื่อว่าความพยายามและการลงมือทำ
+        สามารถนำไปสู่ความสำเร็จได้</p>
+    </div>
+
+    <div class="card">
+        <div class="number">03</div>
+        <h3>MY STYLE</h3>
+        <p>ชื่นชอบความเรียบง่าย
+        ความทันสมัย และการออกแบบ</p>
+    </div>
+</div>
+
+</section><!-- INTERESTS --><section class="dark" id="interests">
+    <h2 class="title reveal">MY <span>INTERESTS.</span></h2><div class="cards reveal">
+    <div class="card">
+        <div class="number">01</div>
+        <h3>FOOTBALL</h3>
+        <p>ชอบเล่นฟุตบอล ออกกำลังกาย
+        และการทำกิจกรรมกีฬา</p>
+    </div>
+
+    <div class="card">
+        <div class="number">02</div>
+        <h3>GAMING</h3>
+        <p>ชอบเล่นเกมออนไลน์
+        เกม RPG และเกมแนวผจญภัย</p>
+    </div>
+
+    <div class="card">
+        <div class="number">03</div>
+        <h3>TECHNOLOGY</h3>
+        <p>สนใจโทรศัพท์ เทคโนโลยี
+        คอมพิวเตอร์ และนวัตกรรม</p>
+    </div>
+
+    <div class="card">
+        <div class="number">04</div>
+        <h3>DESIGN</h3>
+        <p>ชอบการออกแบบเว็บไซต์
+        กราฟิก และการตกแต่ง</p>
+    </div>
+</div>
+
+</section><!-- SKILLS --><section id="skills">
+    <h2 class="title reveal">MY <span>SKILLS.</span></h2><div class="cards reveal">
+    <div class="card">
+        <div class="number">01</div>
+        <h3>CREATIVITY</h3>
+        <p>ความคิดสร้างสรรค์และการออกแบบ</p>
+    </div>
+
+    <div class="card">
+        <div class="number">02</div>
+        <h3>TEAMWORK</h3>
+        <p>การทำงานร่วมกับผู้อื่น</p>
+    </div>
+
+    <div class="card">
+        <div class="number">03</div>
+        <h3>LEARNING</h3>
+        <p>การเรียนรู้และพัฒนาตัวเอง</p>
+    </div>
+</div>
+
+</section><!-- GOALS --><section class="dark" id="goals">
+    <h2 class="title reveal">MY <span>GOALS.</span></h2><div class="cards reveal">
+    <div class="card">
+        <div class="number">01</div>
+        <h3>EDUCATION</h3>
+        <p>ตั้งใจศึกษาและเพิ่มพูนความรู้</p>
+    </div>
+
+    <div class="card">
+        <div class="number">02</div>
+        <h3>CAREER</h3>
+        <p>มีอาชีพที่มั่นคงและประสบความสำเร็จ</p>
+    </div>
+
+    <div class="card">
+        <div class="number">03</div>
+        <h3>FINANCIAL</h3>
+        <p>สร้างความมั่นคงทางการเงิน</p>
+    </div>
+
+    <div class="card">
+        <div class="number">04</div>
+        <h3>SELF DEVELOPMENT</h3>
+        <p>พัฒนาตัวเองให้เก่งขึ้นในทุกๆ วัน</p>
+    </div>
+</div>
+
+</section><!-- DREAM --><section class="dream">
+    <div class="reveal">
+        <p>MY DREAM / MY FUTURE</p>
+        <div class="line"></div>
+        <h2>NEVER STOP<br>GROWING.</h2>
+        <p>
+            ความสำเร็จไม่ได้เกิดขึ้นในวันเดียว<br>
+            แต่เกิดจากการพยายามในทุกๆ วัน
+        </p>
+    </div>
+</section><!-- CONTACT --><section class="contact" id="contact">
+    <h2 class="title reveal">CONTACT <span>ME.</span></h2>
+    <div class="reveal">
+        <p>ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ Portfolio ของผม</p>
+        <p>JIRAYU TONSOKRI</p>
+        <p>© 2026 ALL RIGHTS RESERVED.</p>
+    </div>
+</section><footer>
+    DESIGNED BY JIRAYU.
+</footer><script>
+function enterSite() {
+    document.getElementById("cover").classList.add("hide");
+    document.body.style.overflow = "auto";
+}
+
+document.body.style.overflow = "hidden";
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+});
+</script></body>
+</html>
