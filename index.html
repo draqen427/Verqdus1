@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIRAYU | PORTFOLIO</title><link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+
+body{
+background:#080808;
+color:white;
+font-family:'Kanit',sans-serif;
+font-size:17px;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+/* COVER */
+.cover{
+position:fixed;
+inset:0;
+z-index:999;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:linear-gradient(#0007,#000b),
+url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1600');
+background-size:cover;
+background-position:center;
+transition:1s;
+}
+
+.cover.hide{
+opacity:0;
+visibility:hidden;
+transform:scale(1.08);
+}
+
+.cover h1{
+font-size:clamp(40px,9vw,75px);
+font-weight:300;
+letter-spacing:5px;
+text-shadow:0 0 30px #fff8;
+animation:welcome 1.5s ease both;
+}
+
+.cover p{
+color:#ccc;
+letter-spacing:4px;
+margin:20px;
+font-size:14px;
+animation:fadeIn 2s ease both;
+}
+
+.enter-btn{
+padding:14px 45px;
+background:white;
+color:black;
+border:0;
+cursor:pointer;
+letter-spacing:3px;
+font-family:inherit;
+font-size:16px;
+transition:.4s;
+}
+
+.enter-btn:hover{
+background:#aaa;
+transform:scale(1.08);
+box-shadow:0 0 25px #fff7;
+}
+
+/* NAVIGATION */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#080808e8;
+backdrop-filter:blur(15px);
+z-index:100;
+border-bottom:1px solid #222;
+}
+
+.logo{
+font-family:Montserrat;
+letter-spacing:5px;
+font-size:20px;
+}
+
+nav a{
+color:#aaa;
+text-decoration:none;
+font-size:14px;
+margin-left:15px;
+transition:.4s;
+}
+
+nav a:hover{
+color:white;
+letter-spacing:2px;
+text-shadow:0 0 12px white;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(#0007,#0009),
+url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1600');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-family:Montserrat;
+font-size:clamp(50px,12vw,100px);
+font-weight:300;
+letter-spacing:12px;
+margin:20px 0;
+text-shadow:0 0 30px #fff5;
+animation:slideUp 1.5s ease both;
+}
+
+.hero p{
+color:#ccc;
+letter-spacing:4px;
+font-size:16px;
+animation:fadeIn 2s ease both;
+}
+
+/* GENERAL */
+section{
+padding:100px 9%;
+}
+
+.title{
+font-family:Montserrat;
+font-size:40px;
+letter-spacing:5px;
+margin-bottom:40px;
+position:relative;
+display:inline-block;
+padding-bottom:12px;
+}
+
+.title span{color:#777}
+
+.title::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:0;
+height:2px;
+background:white;
+transition:1s;
+}
+
+.title.show::after{width:100%}
+
+.dark{background:#111}
+
+/* PROFILE */
+.profile{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+align-items:center;
+}
+
+.profile img{
+width:100%;
+height:330px;
+object-fit:cover;
+filter:grayscale(100%);
+}
+
+.profile p{
+color:#aaa;
+line-height:2;
+font-size:18px;
+margin-top:15px;
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+}
+
+.card{
+background:#151515;
+border:1px solid #292929;
+overflow:hidden;
+transition:.5s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#aaa;
+box-shadow:0 10px 35px #ffffff12;
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+filter:grayscale(100%);
+transition:.7s;
+}
+
+.card:hover img{
+filter:grayscale(0%);
+transform:scale(1.07);
+}
+
+.card-content{padding:23px}
+
+.card h3{
+font-family:Montserrat;
+font-size:21px;
+letter-spacing:2px;
+margin-bottom:12px;
+transition:.4s;
+}
+
+.card:hover h3{
+color:#ccc;
+letter-spacing:4px;
+}
+
+.card p{
+color:#aaa;
+font-size:16px;
+line-height:2;
+}
+
+/* DREAM */
+.dream{
+text-align:center;
+background:linear-gradient(#0009,#0009),
+url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1600');
+background-size:cover;
+background-position:center;
+}
+
+.dream h2{
+font-family:Montserrat;
+font-size:clamp(35px,7vw,65px);
+letter-spacing:5px;
+text-shadow:0 0 30px #fff6;
+}
+
+.dream p{
+color:#ddd;
+margin-top:20px;
+font-size:17px;
+}
+
+/* CONTACT */
+.contact{text-align:center}
+
+.contact p{
+color:#aaa;
+margin:15px;
+font-size:17px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#666;
+border-top:1px solid #222;
+font-size:13px;
+letter-spacing:3px;
+}
+
+/* ANIMATIONS */
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(50px);
+filter:blur(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+filter:blur(0);
+}
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+@keyframes welcome{
+from{
+opacity:0;
+transform:scale(.8);
+letter-spacing:15px;
+}
+to{
+opacity:1;
+transform:scale(1);
+letter-spacing:5px;
+}
+}
+
+/* SCROLL REVEAL */
+.reveal{
+opacity:0;
+transform:translateY(35px);
+filter:blur(5px);
+transition:all 1s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+filter:blur(0);
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+nav{padding:18px 4%}
+
+nav a{
+font-size:10px;
+margin-left:7px;
+}
+
+.logo{font-size:15px}
+
+.hero h1{
+font-size:48px;
+letter-spacing:6px;
+}
+
+.title{font-size:30px}
+
+.profile{
+grid-template-columns:1fr;
+}
+
+section{padding:80px 7%}
+
+.card h3{font-size:19px}
+
+.card p{font-size:16px}
+
+.profile p{font-size:17px}
+
+.dream h2{font-size:36px}
+}
+</style></head><body><!-- COVER --><div class="cover" id="cover">
+<div>
+<p>WELCOME TO MY PORTFOLIO</p>
+<h1>ยินดีต้อนรับ</h1>
+<p>JIRAYU TONSOKRI | 2026</p>
+<button class="enter-btn" onclick="enterSite()">
+เข้าสู่เว็บไซต์
+</button>
+</div>
+</div><!-- NAV --><nav>
+<div class="logo">JIRAYU.</div>
+<div>
+<a href="#home">HOME</a>
+<a href="#profile">PROFILE</a>
+<a href="#interests">INTERESTS</a>
+<a href="#goals">GOALS</a>
+</div>
+</nav><!-- HOME --><div class="hero" id="home">
+<div>
+<p>PERSONAL PORTFOLIO</p>
+<h1>JIRAYU.</h1>
+<p>MY LIFE • MY STORY • MY FUTURE</p>
+</div>
+</div><!-- PROFILE --><section class="dark" id="profile">
+<h2 class="title reveal">MY PROFILE.</h2><div class="profile reveal">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900" alt="Workspace"><div>
+<h2>จิรายุ ต้อนโสกรี</h2>
+<p>
+สวัสดีครับ ผมชื่อจิรายุ
+เว็บไซต์นี้เป็นพื้นที่แนะนำตัว
+และรวบรวมเรื่องราวเกี่ยวกับตัวผม
+ความชอบ ความสามารถ และเป้าหมายในอนาคต
+</p>
+</div>
+</div>
+</section><!-- ABOUT --><section>
+<h2 class="title reveal">ABOUT ME.</h2><div class="cards">
+<div class="card reveal">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700" alt="Workspace">
+<div class="card-content">
+<h3>MYSELF</h3>
+<p>ชอบเรียนรู้สิ่งใหม่ ๆ และพัฒนาตัวเอง</p>
+</div>
+</div><div class="card reveal">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700" alt="Learning">
+<div class="card-content">
+<h3>MY MINDSET</h3>
+<p>เชื่อในการพยายามและการลงมือทำ</p>
+</div>
+</div>
+</div>
+</section><!-- INTERESTS --><section class="dark" id="interests">
+<h2 class="title reveal">MY INTERESTS.</h2><div class="cards">
+<div class="card reveal">
+<img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=700" alt="Football">
+<div class="card-content">
+<h3>FOOTBALL</h3>
+<p>ชอบเล่นฟุตบอลและกิจกรรมกีฬา</p>
+</div>
+</div><div class="card reveal">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700" alt="Gaming">
+<div class="card-content">
+<h3>GAMING</h3>
+<p>สนใจเกมออนไลน์และเกม RPG</p>
+</div>
+</div><div class="card reveal">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700" alt="Technology">
+<div class="card-content">
+<h3>TECHNOLOGY</h3>
+<p>ชอบเทคโนโลยีและอุปกรณ์อิเล็กทรอนิกส์</p>
+</div>
+</div>
+</div>
+</section><!-- SKILLS --><section>
+<h2 class="title reveal">MY SKILLS.</h2><div class="cards">
+<div class="card reveal">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700" alt="Computer">
+<div class="card-content">
+<h3>COMPUTER</h3>
+<p>การใช้งานคอมพิวเตอร์และเทคโนโลยี</p>
+</div>
+</div><div class="card reveal">
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700" alt="Planning">
+<div class="card-content">
+<h3>PLANNING</h3>
+<p>การวางแผนและจัดการงาน</p>
+</div>
+</div>
+</div>
+</section><!-- GOALS --><section class="dark" id="goals">
+<h2 class="title reveal">MY GOALS.</h2><div class="cards">
+<div class="card reveal">
+<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700" alt="Education">
+<div class="card-content">
+<h3>EDUCATION</h3>
+<p>ตั้งใจเรียนและเพิ่มพูนความรู้</p>
+</div>
+</div><div class="card reveal">
+<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700" alt="Career">
+<div class="card-content">
+<h3>CAREER</h3>
+<p>มีอาชีพที่มั่นคงในอนาคต</p>
+</div>
+</div><div class="card reveal">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700" alt="Finance">
+<div class="card-content">
+<h3>FINANCIAL</h3>
+<p>สร้างความมั่นคงทางการเงิน</p>
+</div>
+</div>
+</div>
+</section><!-- DREAM --><section class="dream">
+<div class="reveal">
+<p>MY DREAM / MY FUTURE</p>
+<h2>NEVER STOP<br>GROWING.</h2>
+<p>พัฒนาตัวเองในทุกวัน เพื่ออนาคตที่ดีกว่า</p>
+</div>
+</section><!-- CONTACT --><section class="contact" id="contact">
+<h2 class="title reveal">THANK YOU.</h2>
+<div class="reveal">
+<p>ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์ของผม</p>
+<p>JIRAYU TONSOKRI</p>
+</div>
+</section><footer>
+JIRAYU PORTFOLIO © 2026
+</footer><script>
+function enterSite(){
+document.getElementById('cover').classList.add('hide');
+document.body.style.overflow='auto';
+}
+
+document.body.style.overflow='hidden';
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+},{threshold:0.15});
+
+document.querySelectorAll('.reveal').forEach(el=>{
+observer.observe(el);
+});
+</script></body>
+</html>
